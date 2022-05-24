@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Navbar from './Navbar'
 
 const Addbus = () => {
     var [route,setRoute]=useState("")
@@ -11,7 +12,9 @@ const Addbus = () => {
         console.log(data)
     }
   return (
-    <div><div class="container">
+    <div>
+    <Navbar/>
+        <div class="container">
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row g-3">
