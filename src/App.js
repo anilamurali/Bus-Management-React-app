@@ -12,9 +12,9 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' exact element={Addbus}/>
-      <Route path='/search' exact element={Searchbus}/>
-      <Route path='/view' exact element={Viewbus}/>
+      <Route path='/' exact element={<Addbus/>}/>
+      <Route path='/search' exact element={<Searchbus/>}/>
+      <Route path='/view' exact element={<Viewbus/>}/>
     </Routes>
     </BrowserRouter>
    </>
