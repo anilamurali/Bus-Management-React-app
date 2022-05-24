@@ -5,7 +5,8 @@ const Navbar = () => {
   return (
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand">EBUS</a>
+  <link class="navbar-brand">EBUS</link>
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,9 +16,6 @@ const Navbar = () => {
     <Link className='nav-item nav-link active' to='/search'>SEARCH BUSS </Link>
     <Link className='nav-item nav-link active' to='/view'>VIEW BUS</Link>
     
-      <a class="nav-item nav-link active" >ADD BUSS </a>
-      <a class="nav-item nav-link active" >SEARCH BUS</a>
-      <a class="nav-item nav-link active">VIEW BUS</a>
       
     </div>
   </div>
