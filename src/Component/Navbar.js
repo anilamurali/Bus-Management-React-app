@@ -5,21 +5,30 @@ const Navbar = () => {
   return (
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <link class="navbar-brand">EBUS</link>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-    <Link className='nav-item nav-link active' to='/'>ADD BUSS </Link>
-    <Link className='nav-item nav-link active' to='/search'>SEARCH BUSS </Link>
-    <Link className='nav-item nav-link active' to='/view'>VIEW BUS</Link>
-    
-      
+    <div class="container-fluid">
+      <Link class="navbar-brand" to='/'>Home</Link>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            
+            <Link class="nav-link active" to='/'>ADD BUS</Link>
+            
+          </li>
+          
+          <li class="nav-item">
+            <Link class="nav-link" to='/search'>SEARCH BUS</Link>
+          </li>
+          <li class="nav-item">
+            <Link class="nav-link" to='/view'>VIEW BUS</Link>
+          </li>
+          
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
     </div>
   )
 }

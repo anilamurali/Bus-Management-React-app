@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import Navbar from './Navbar'
 
@@ -8,9 +9,11 @@ const Addbus = () => {
     var [owner,setOwner]=useState("")
     var [contact,setContact]=useState("")
     const setData=()=>{
-        var data={"route":route,"name":name,"regno":regno,"owner":owner,"contact":contact}
+        var data={"route":route,"busname":name,"regno":regno,"owner":owner,"contact":contact}
         console.log(data)
+        
     }
+    
   return (
     <div>
     <Navbar/>
