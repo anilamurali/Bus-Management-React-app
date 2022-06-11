@@ -1,22 +1,30 @@
-import React from 'react'
+
 import Navbar from './Navbar'
+import axios from 'axios'
+import React, { useState } from 'react'
+
 
 const Viewbus = () => {
-    var viewbus=[{
-        "route":"Pathanamthitta",
-        "busname":"vanad",
-        "busregisterno":"KL25F2020",
-        "owner":"Ravi Thilakan",
-        "contact":"954432333"
-    }, 
-    {
-        "route":"punaloor",
-        "busname":"Ashi",
-        "busregisterno":"KL25F2520",
-        "owner":"sathyan",
-        "contact":"9544323004"
+    var [viewbus,setView]=useState([])
+    axios.get("http://localhost:4500/api/viewbus").then((response)=>{
+      console.log(response.data)
+      setView(response.data)
+    })
+    const deleteBusApi=(id)=>{
+      var data={"_id":id}
+      console.log(data)
+      axios.post("http://localhost:4500/api/deletebus",data).then((response)=>{
+        if(response.data.status=="success")
+        {
+          alert("Successfully deleted")
+        }
+        else{
+          alert("Error in deletion")
+        }
+      })
+
     }
-]
+
   return (
     <div>
         <Navbar/>
@@ -31,6 +39,7 @@ const Viewbus = () => {
                     <th scope="col">REGISTER NUMBER</th>
                     <th scope="col">OWNER NAME</th>
                     <th scope="col">CONTACT</th>
+                    <th scope="col">DELETE</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -39,10 +48,10 @@ const Viewbus = () => {
                        return <tr>
                              <td>{value.route}</td>
                              <td>{value.busname}</td>
-                             <td>{value.busregisterno}</td>
+                             <td>{value.regno}</td>
                              <td>{value.owner}</td>
                              <td>{value.contact}</td>
-                             
+                             <td><button onClick={ ()=>{deleteBusApi(value._id)}} className='btn btn-info'>DELETE</button></td>
                         </tr>
                         })}
                 </tbody>

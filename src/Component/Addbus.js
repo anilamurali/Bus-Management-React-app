@@ -11,6 +11,18 @@ const Addbus = () => {
     const setData=()=>{
         var data={"route":route,"busname":name,"regno":regno,"owner":owner,"contact":contact}
         console.log(data)
+        axios.post("http://localhost:4500/api/addbus",data).then((response)=>{
+            console.log(response.data)
+            if(response.data.status=="success")
+            {
+                alert("Successfully added")
+            }
+            else
+            {
+                alert("Something went wrong")
+            }
+        })
+    
         
     }
     
